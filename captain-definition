@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 2,
+  "dockerfileLines" :[
+  "FROM php:7.4-cli",
+  "RUN mkdir -p /var/www/html",
+  "COPY ./ /var/www/html",
+  "WORKDIR /usr/src/dst_folder",
+  "RUN docker-php-ext-install pdo pdo_mysql",
+  "CMD [ \"php\", \"-S\", \"[::]:80\", \"-t\", \"/var/www/html/\" ]",
+  "EXPOSE 80"
+  ]
+ }
